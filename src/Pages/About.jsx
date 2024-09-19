@@ -1,5 +1,3 @@
-import { Link } from "react-router-dom";
-
 const skills = [
 	"HTML5",
 	"CSS3",
@@ -25,6 +23,15 @@ function SkillsList({ skills }) {
 }
 
 function About() {
+	const handleDownload = () => {
+		const pdfUrl = "/Updated_Resume-Mark.pdf";
+		const link = document.createElement("a");
+		link.href = pdfUrl;
+		link.download = "Mark_Ndubuisi-Resume.pdf"; // specify the filename
+		document.body.appendChild(link);
+		link.click();
+		document.body.removeChild(link);
+	};
 	return (
 		<section className='section grid place-items-center'>
 			<div className='container md:w-3/4'>
@@ -49,7 +56,11 @@ function About() {
 							the latest technologies and best practices in
 							frontend development.
 						</p>
-						<Link to=''></Link>
+						<button
+							className='bg-[var(--bg-black-50)] text-[var(--text-black-700)] p-2 rounded-lg'
+							onClick={handleDownload}>
+							My Resume
+						</button>
 					</div>
 					<div className='w-full md:w-1/2'>
 						<h3 className='text-2xl text-[var(--text-black-700)] font-semibold mb-4'>
