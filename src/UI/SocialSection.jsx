@@ -9,7 +9,7 @@ export default function SocialSection({ color = "var(--bg-black-100)" }) {
 			<Link
 				style={{ backgroundColor: color }}
 				className='inline-block p-2 rounded-lg  social transition'
-				to='https://x.com/xcodes_tech'
+				to='https://x.com/devtochukwu'
 				target='_blank'
 				rel='noopener noreferrer'>
 				<FaXTwitter className='text-4xl transition-colors duration-100 ease-in-out' />
