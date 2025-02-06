@@ -1,73 +1,75 @@
 @import url("https://fonts.googleapis.com/css2?family=Clicker+Script&family=Poppins:wght@200;300;400;500;600;700&display=swap");
-/* <link href="https://fonts.cdnfonts.com/css/manuscribe-free" rel="stylesheet"> 
+/* <link href="https://fonts.cdnfonts.com/css/manuscribe-free" rel="stylesheet">
 font-family: 'Manuscribe Free', sans-serif;
 https://fontshare.com/*/
 :root {
-	--bg-black-900: #f2f2fc;
-	--bg-black-100: #fdf9ff;
-	--bg-black-50: #e8dfec;
-	--text-black-900: #302e4d;
-	--text-black-700: #504e70;
+  --bg-black-900: #f2f2fc;
+  --bg-black-100: #fdf9ff;
+  --bg-black-50: #e8dfec;
+  --text-black-900: #302e4d;
+  --text-black-700: #504e70;
+  --bg-display: #f2f2fc99;
 }
 
 .layout.dark {
-	--bg-black-900: #151515;
-	--bg-black-100: #222222;
-	--bg-black-50: #393939;
-	--text-black-900: #ffffff;
-	--text-black-700: #e9e9e9;
+  --bg-black-900: #151515;
+  --bg-black-100: #222222;
+  --bg-black-50: #393939;
+  --text-black-900: #ffffff;
+  --text-black-700: #e9e9e9;
+  --bg-display: #15151599;
 }
 
 *::selection {
-	background-color: var(--skin-color);
-	color: var(--bg-black-900);
+  background-color: var(--skin-color);
+  color: var(--bg-black-900);
 }
 
 .layout {
-	line-height: 1.5;
-	font-size: 16px;
-	font-family: "Poppins", sans-serif;
-	text-decoration: none;
+  line-height: 1.5;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  text-decoration: none;
 }
 
 .section {
-	background: var(--bg-black-900);
-	min-height: 100vh;
-	display: block;
-	padding: 0 30px;
-	/* overflow: scroll; */
+  background: var(--bg-black-900);
+  min-height: 100vh;
+  display: block;
+  padding: 0 30px;
+  /* overflow: scroll; */
 }
 
 .section .container h2 {
-	flex: 0 0 100%;
-	font-size: 40px;
-	color: var(--text-black-900);
-	font-weight: 700;
-	position: relative;
-	z-index: 1;
+  flex: 0 0 100%;
+  font-size: 40px;
+  color: var(--text-black-900);
+  font-weight: 700;
+  position: relative;
+  z-index: 1;
 }
 
 .section .container h2::before {
-	content: "";
-	height: 4px;
-	width: 50px;
-	background-color: var(--skin-color);
-	position: absolute;
-	top: 100%;
-	left: 0;
+  content: "";
+  height: 4px;
+  width: 50px;
+  background-color: var(--skin-color);
+  position: absolute;
+  top: 100%;
+  left: 0;
 }
 .section .container h2::after {
-	content: "";
-	height: 4px;
-	width: 25px;
-	background-color: var(--skin-color);
-	position: absolute;
-	top: 100%;
-	left: 0;
-	margin-top: 8px;
+  content: "";
+  height: 4px;
+  width: 25px;
+  background-color: var(--skin-color);
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 8px;
 }
 
 nav li a.active,
 nav li a:hover {
-	color: var(--skin-color);
+  color: var(--skin-color);
 }
