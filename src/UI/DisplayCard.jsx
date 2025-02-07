@@ -1,7 +1,7 @@
 function DisplayCard({ children, className }) {
   return (
     <section
-      className={`section md:px-[30px] grid place-items-center ${className}`}
+      className={`section px-4 md:px-[30px] grid place-items-center ${className}`}
     >
       {children}
       <section className="fixed inset-0 z-10 pointer-events-none">
