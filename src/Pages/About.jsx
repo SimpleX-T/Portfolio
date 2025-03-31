@@ -1,27 +1,57 @@
+import EyeAnimation from "../animations/EyeAnimation";
 import DisplayCard from "../UI/DisplayCard";
 
 const skills = [
-  "HTML5",
-  "CSS3",
-  "JavaScript (ES6+)",
-  "TypeScript",
-  "React.js",
-  "NextJS",
-  "Java",
-  "Solidity",
-  "Tailwind CSS",
-  "Responsive Web Design",
-  "Version Control (Git)",
+  { label: "HTML", icon: "https://img.icons8.com/color/48/000000/html-5.png" },
+  { label: "CSS", icon: "https://img.icons8.com/color/48/000000/css3.png" },
+  {
+    label: "Tailwind CSS",
+    icon: "https://img.icons8.com/color/48/000000/tailwindcss.png",
+  },
+  {
+    label: "JavaScript",
+    icon: "https://img.icons8.com/color/48/000000/javascript.png",
+  },
+  {
+    label: "Responsive Web Design",
+    icon: "https://img.icons8.com/?size=100&id=KjPwn6Tz1iuz&format=png&color=000000",
+  },
+  {
+    label: "React",
+    icon: "https://img.icons8.com/?size=100&id=wPohyHO_qO1a&format=png&color=000000",
+  },
+  {
+    label: "TypeScript",
+    icon: "https://img.icons8.com/color/48/000000/typescript.png",
+  },
+  {
+    label: "NextJS",
+    icon: "https://img.icons8.com/color/48/000000/nextjs.png",
+  },
+  { label: "Git", icon: "https://img.icons8.com/color/48/000000/git.png" },
+  {
+    label: "Java",
+    icon: "https://img.icons8.com/color/48/000000/java-coffee-cup-logo.png",
+  },
+  {
+    label: "Solidity",
+    icon: "https://img.icons8.com/color/48/000000/solidity.png",
+  },
 ];
 
 function SkillsList({ skills }) {
   return skills.map((skill, index) => (
-    <span
-      className="px-3 py-1 bg-[var(--bg-black-50)] text-[var(--text-black-700)] rounded-full text-sm"
+    <div
+      className="flex gap-2 text-xs px-3 py-1 bg-[var(--bg-black-50)] text-[var(--text-black-700)] rounded-md group cursor-pointer"
       key={index}
     >
-      {skill}
-    </span>
+      <img
+        src={skill.icon}
+        alt={`${skill.label.slice(0, 1)} ${skill.label.slice(1, 2)}`}
+        className="w-6 h-6 transition-all duration-150 grayscale group-hover:grayscale-0"
+      />
+      <span className="text-sm">{skill.label}</span>
+    </div>
   ));
 }
 
@@ -73,6 +103,12 @@ function About() {
             </div>
           </div>
         </div>
+      </div>
+      <div
+        className="absolute top-14 left-1/2 transform -translate-x-1/2 -translate-y-1/4 z-0 opacity-30"
+        // ref={containerRef}
+      >
+        <EyeAnimation scale={3} />
       </div>
     </DisplayCard>
   );

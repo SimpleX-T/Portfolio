@@ -43,57 +43,13 @@ function PortfolioCard({ img, title, description, link, technologies }) {
           to={link}
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-auto px-4 py-2 bg-[var(--skin-color)] text-white rounded-md text-center flex items-center justify-center transition-colors duration-300"
+          className="mt-auto px-4 py-2 bg-[var(--skin-color)] text-white rounded-md text-center flex items-center justify-center duration-300 hover:opacity-80 transition-all ease-in-out"
         >
           <span className="mr-2">View Live Project</span>
           <FaExternalLinkAlt />
         </Link>
       </div>
     </div>
-
-    // <div className="w-full max-w-[350px] md:max-w-[350px] min-h-[450px] max-h-[450px] bg-[var(--bg-card)] rounded-lg overflow-hidden border border-[var(--bg-black-50)] flex flex-col">
-    //   <div className="w-full h-52 mb-auto">
-    //     <img src={img} alt={title} className="w-full h-full object-cover" />
-    //   </div>
-
-    //   <div className="px-4 mb-4 min-h-32 mt-3 flex flex-col border">
-    //     <h3 className="text-xl font-semibold text-[var(--text-black-900)] mb-2">
-    //       {title}
-    //     </h3>
-
-    //     <div className="max-w-full overflow-hidden h-8 max-h-10 mb-4">
-    //       <div
-    //         className="flex gap-2 mb-3 overflow-x-scroll"
-    //         style={{
-    //           scrollbarWidth: "none",
-    //         }}
-    //       >
-    //         {technologies.map((tech, index) => (
-    //           <span
-    //             key={index}
-    //             className="px-2 py-1 min-w-fit bg-[var(--bg-black-50)] text-[var(--text-black-700)] text-sm rounded-md"
-    //           >
-    //             {tech}
-    //           </span>
-    //         ))}
-    //       </div>
-    //     </div>
-
-    //     <p className="text-gray-400 mb-auto text-xs text-ellipsis">
-    //       {description.split(" ").slice(0, 20).join(" ")}
-    //       {description.split(" ").length > 20 && <button>Read More</button>}
-    //     </p>
-    //   </div>
-    //   <Link
-    //     to={link}
-    //     target="_blank"
-    //     rel="noopener noreferrer"
-    //     className="px-4 py-2 bg-[var(--skin-color)] text-white rounded-md transition-opacity duration-300 text-center flex items-center justify-center"
-    //   >
-    //     <span className="mr-2">View Live Project</span>
-    //     <FaExternalLinkAlt />
-    //   </Link>
-    // </div>
   );
 }
 
