@@ -4,17 +4,17 @@ const HomeSocials = () => {
   const socialLinks = [
     {
       name: "GitHub",
-      url: "https://github.com/MarkNdubuisi",
+      url: "https://github.com/SimpleX-T",
       icon: "github",
     },
     {
       name: "LinkedIn",
-      url: "https://linkedin.com/in/markndubuisi",
+      url: "https://www.linkedin.com/in/mark-tochukwu-306b06298",
       icon: "linkedin",
     },
     {
       name: "Twitter",
-      url: "https://twitter.com/MarkNdubuisi_",
+      url: "https://x.com/devtochukwu",
       icon: "twitter",
     },
   ];
