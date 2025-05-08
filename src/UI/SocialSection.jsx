@@ -18,7 +18,7 @@ export default function SocialSection({ color = "var(--bg-black-100)" }) {
       <Link
         style={{ backgroundColor: color }}
         className="inline-block social transition  p-2 rounded-lg"
-        to="https://linkedin.com/in/mark-tochukwu-306b06298"
+        to="https://www.linkedin.com/in/mark-ndubuisi-306b06298"
         target="_blank"
         rel="noopener noreferrer"
       >
