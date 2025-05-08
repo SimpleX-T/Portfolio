@@ -9,7 +9,7 @@ const HomeSocials = () => {
     },
     {
       name: "LinkedIn",
-      url: "https://www.linkedin.com/in/mark-tochukwu-306b06298",
+      url: "https://www.linkedin.com/in/mark-ndubuisi-306b06298",
       icon: "linkedin",
     },
     {
