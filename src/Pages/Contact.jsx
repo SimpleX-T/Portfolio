@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
-import DisplayCard from "../UI/DisplayCard";
-import SocialSection from "../UI/SocialSection";
+import DisplayCard from "../components/DisplayCard";
+import SocialSection from "../components/SocialSection";
 import { motion } from "motion/react";
 import { Send, CheckCircle, AlertCircle } from "lucide-react";
 
@@ -229,8 +229,8 @@ function Contact() {
 
 export default Contact;
 
-// import DisplayCard from "../UI/DisplayCard";
-// import SocialSection from "../UI/SocialSection";
+// import DisplayCard from "../components/DisplayCard";
+// import SocialSection from "../components/SocialSection";
 
 // function Contact() {
 //   return (

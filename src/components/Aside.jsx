@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { FaHome, FaBriefcase, FaUser, FaEnvelope } from "react-icons/fa";
 
-import Logo from "../UI/Logo";
+import Logo from "../components/Logo";
 
 function Aside({ toggle, setToggle }) {
   const translateX = toggle ? "0%" : "100%";

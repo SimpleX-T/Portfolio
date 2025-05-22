@@ -1,8 +1,8 @@
 import { useEffect, useState, useRef } from "react";
-import DisplayCard from "../UI/DisplayCard";
+import DisplayCard from "../components/DisplayCard";
 import { motion, AnimatePresence } from "framer-motion";
 import EyeAnimation from "../animations/EyeAnimation";
-import HomeSocials from "../UI/HomeSocials";
+import HomeSocials from "../components/HomeSocials";
 
 const greetings = [
   { language: "english", greeting: "hello" },

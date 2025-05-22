@@ -2,9 +2,9 @@ import { Outlet } from "react-router-dom";
 import { useState } from "react";
 
 import "../CSS/main.css";
-import Aside from "../UI/Aside";
-import ToggleIcon from "../UI/ToggleIcon";
-import StyleSwitcher from "../UI/StyleSwitcher";
+import Aside from "../components/Aside";
+import ToggleIcon from "../components/ToggleIcon";
+import StyleSwitcher from "../components/StyleSwitcher";
 import { useTheme } from "../Services/ThemeContext";
 import ParticleField from "../animations/ParticleField";
 

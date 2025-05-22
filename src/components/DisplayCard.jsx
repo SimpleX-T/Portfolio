@@ -1,4 +1,4 @@
-function DisplayCard({ children, className }) {
+function DisplayCard({ children, className = "" }) {
   return (
     <section
       className={`section px-4 md:px-[30px] grid place-items-center ${className}`}

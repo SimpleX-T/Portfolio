@@ -14,7 +14,7 @@ const HomeSocials = () => {
     },
     {
       name: "Twitter",
-      url: "https://x.com/devtochukwu",
+      url: "https://x.com/intent/follow?screen_name=devtochukwu",
       icon: "twitter",
     },
   ];

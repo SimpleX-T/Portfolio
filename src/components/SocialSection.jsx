@@ -9,7 +9,7 @@ export default function SocialSection({ color = "var(--bg-black-100)" }) {
       <Link
         style={{ backgroundColor: color }}
         className="inline-block p-2 rounded-lg  social transition"
-        to="https://x.com/devtochukwu"
+        to="https://x.com/intent/follow?screen_name=devtochukwu"
         target="_blank"
         rel="noopener noreferrer"
       >
