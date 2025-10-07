@@ -41,17 +41,33 @@ export default function Contact() {
     e.preventDefault();
 
     try {
-      // Here you would typically make an API call to send the email
-      // For now we'll simulate success
-      await new Promise((resolve) => setTimeout(resolve, 500));
-
-      setFormStatus({
-        submitted: true,
-        success: true,
-        message: "Thanks for reaching out! I'll get back to you soon.",
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: formState.name,
+          email: formState.email,
+          message: formState.message,
+        }),
       });
 
-      resetForm();
+      const data = await response.json();
+
+      if (response.ok && data?.success) {
+        setFormStatus({
+          submitted: true,
+          success: true,
+          message: "Thanks for reaching out! I'll get back to you soon.",
+        });
+
+        resetForm();
+      } else {
+        setFormStatus({
+          submitted: true,
+          success: false,
+          message: "Failed to send message. Please try again later.",
+        });
+      }
 
       setTimeout(() => {
         setFormStatus({
