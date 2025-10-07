@@ -18,3 +18,20 @@ export interface Skill {
   label: string;
   icon: string;
 }
+
+export interface WorkExperience {
+  id: number;
+  role: string;
+  link: string;
+  company: string;
+  period: string;
+  description: string;
+}
+
+export interface Certification {
+  id: number;
+  title: string;
+  issuer: string;
+  year: string;
+  icon: string;
+}

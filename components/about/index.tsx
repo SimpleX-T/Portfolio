@@ -37,7 +37,7 @@ export default function About() {
   const [showModal, setShowModal] = useState(false);
   const fileId = "/docs/Resume.pdf";
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen md:py-20">
       <div className="container">
         <motion.div
           initial={{ opacity: 0 }}
@@ -45,8 +45,6 @@ export default function About() {
           transition={{ duration: 0.5 }}
           className="relative z-10 py-12"
         >
-          {/* <h2 className="mb-12">About Me</h2> */}
-
           <div className=" flex flex-col justify-center gap-12">
             <motion.div
               initial={{ opacity: 0, x: -50 }}

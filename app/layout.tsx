@@ -1,10 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import {
-  Bitcount_Grid_Double,
-  Bricolage_Grotesque,
-  Caveat,
-} from "next/font/google";
+import { Bricolage_Grotesque, Caveat } from "next/font/google";
 import Layout from "@/components/Layout";
 import Providers from "@/providers";
 
@@ -32,6 +28,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Mark Ndubuisi",
     description: "Mark Ndubuisi is a software engineer and a freelancer",
+    images: "/og_image.png",
   },
 };
 

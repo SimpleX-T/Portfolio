@@ -1,4 +1,5 @@
 "use client";
+
 import { useState } from "react";
 import SocialSection from "@/components/social-section";
 import { motion } from "motion/react";
@@ -22,27 +23,35 @@ export default function Contact() {
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
-    setFormState({
-      ...formState,
+    setFormState((prev) => ({
+      ...prev,
       [e.target.name]: e.target.value,
+    }));
+  };
+
+  const resetForm = () => {
+    setFormState({
+      name: "",
+      email: "",
+      message: "",
     });
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    setFormStatus({
-      submitted: true,
-      success: true,
-      message: "Your message has been sent successfully!",
-    });
+    try {
+      // Here you would typically make an API call to send the email
+      // For now we'll simulate success
+      await new Promise((resolve) => setTimeout(resolve, 500));
 
-    setTimeout(() => {
-      setFormState({
-        name: "",
-        email: "",
-        message: "",
+      setFormStatus({
+        submitted: true,
+        success: true,
+        message: "Thanks for reaching out! I'll get back to you soon.",
       });
+
+      resetForm();
 
       setTimeout(() => {
         setFormStatus({
@@ -51,20 +60,40 @@ export default function Contact() {
           message: "",
         });
       }, 5000);
-    }, 500);
+    } catch (error) {
+      setFormStatus({
+        submitted: true,
+        success: false,
+        message: "Oops! Something went wrong. Please try again later.",
+      });
+    }
   };
+
+  const inputClasses = (fieldName: string) => `
+    w-full p-3
+    bg-[var(--bg-black-100)]
+    text-[var(--text-black-900)]
+    rounded-lg border-2
+    focus:outline-none
+    transition-all duration-300
+    ${
+      focused === fieldName
+        ? "border-[var(--skin-color)]"
+        : "border-transparent"
+    }
+  `;
 
   return (
     <main className="min-h-screen">
-      <div className="container max-w-4xl relative z-10">
-        <motion.h2
-          className="text-4xl md:text-5xl font-bold mb-8 text-[var(--text-black-900)]"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+      <div className="container max-w-4xl relative z-10 mx-auto">
+        <motion.h3
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="text-3xl sm:text-4xl font-semibold text-[var(--text-black-700)] mb-4 text-center"
         >
-          Let&apos;s <span className="text-[var(--skin-color)]">Connect</span>
-        </motion.h2>
+          Get in Touch
+        </motion.h3>
 
         <div className="flex flex-col md:flex-row gap-12 mt-10 bg-[var(--bg-black-50)] rounded-xl p-6 shadow-lg">
           <motion.div
@@ -79,8 +108,8 @@ export default function Contact() {
               </h3>
 
               <p className="mb-8 text-[var(--text-black-700)]">
-                I&apos;m always open to new opportunities and collaborations.
-                Feel free to reach out through any of these platforms:
+                I&apos;m always excited to connect about new opportunities and
+                collaborations. Reach out through any of these platforms:
               </p>
 
               <motion.div
@@ -96,7 +125,7 @@ export default function Contact() {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1.2 }}
               >
-                <p>Or send me a message using the form </p>
+                <p>Or drop me a message using the form →</p>
               </motion.div>
             </div>
           </motion.div>
@@ -129,94 +158,79 @@ export default function Contact() {
                 <p>{formStatus.message}</p>
               </motion.div>
             ) : (
-              <form onSubmit={handleSubmit}>
-                <div className="space-y-4">
-                  <div>
-                    <motion.div
-                      transition={{
-                        type: "spring",
-                        stiffness: 400,
-                        damping: 10,
-                      }}
-                    >
-                      <input
-                        type="text"
-                        name="name"
-                        value={formState.name}
-                        onChange={handleChange}
-                        placeholder="Your Name"
-                        required
-                        className={`w-full p-3 bg-[var(--bg-black-100)] text-[var(--text-black-900)] rounded-lg border-2 focus:outline-none transition-all duration-300 ${
-                          focused === "name"
-                            ? "border-[var(--skin-color)]"
-                            : "border-transparent"
-                        }`}
-                        onFocus={() => setFocused("name")}
-                        onBlur={() => setFocused(null)}
-                      />
-                    </motion.div>
-                  </div>
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <motion.div
+                  transition={{
+                    type: "spring",
+                    stiffness: 400,
+                    damping: 10,
+                  }}
+                >
+                  <input
+                    type="text"
+                    name="name"
+                    value={formState.name}
+                    onChange={handleChange}
+                    placeholder="Your Name"
+                    required
+                    className={inputClasses("name")}
+                    onFocus={() => setFocused("name")}
+                    onBlur={() => setFocused(null)}
+                  />
+                </motion.div>
 
-                  <div>
-                    <motion.div
-                      transition={{
-                        type: "spring",
-                        stiffness: 400,
-                        damping: 10,
-                      }}
-                    >
-                      <input
-                        type="email"
-                        name="email"
-                        value={formState.email}
-                        onChange={handleChange}
-                        placeholder="Your Email"
-                        required
-                        className={`w-full p-3 bg-[var(--bg-black-100)] text-[var(--text-black-900)] rounded-lg border-2 focus:outline-none transition-all duration-300 ${
-                          focused === "email"
-                            ? "border-[var(--skin-color)]"
-                            : "border-transparent"
-                        }`}
-                        onFocus={() => setFocused("email")}
-                        onBlur={() => setFocused(null)}
-                      />
-                    </motion.div>
-                  </div>
+                <motion.div
+                  transition={{
+                    type: "spring",
+                    stiffness: 400,
+                    damping: 10,
+                  }}
+                >
+                  <input
+                    type="email"
+                    name="email"
+                    value={formState.email}
+                    onChange={handleChange}
+                    placeholder="Your Email"
+                    required
+                    className={inputClasses("email")}
+                    onFocus={() => setFocused("email")}
+                    onBlur={() => setFocused(null)}
+                  />
+                </motion.div>
 
-                  <div>
-                    <motion.div
-                      transition={{
-                        type: "spring",
-                        stiffness: 400,
-                        damping: 10,
-                      }}
-                    >
-                      <textarea
-                        name="message"
-                        value={formState.message}
-                        onChange={handleChange}
-                        placeholder="Your Message"
-                        rows={5}
-                        required
-                        className={`w-full p-3 bg-[var(--bg-black-100)] text-[var(--text-black-900)] resize-none rounded-lg border-2 focus:outline-none transition-all duration-300 ${
-                          focused === "message"
-                            ? "border-[var(--skin-color)]"
-                            : "border-transparent"
-                        }`}
-                        onFocus={() => setFocused("message")}
-                        onBlur={() => setFocused(null)}
-                      />
-                    </motion.div>
-                  </div>
+                <motion.div
+                  transition={{
+                    type: "spring",
+                    stiffness: 400,
+                    damping: 10,
+                  }}
+                >
+                  <textarea
+                    name="message"
+                    value={formState.message}
+                    onChange={handleChange}
+                    placeholder="Your Message"
+                    rows={5}
+                    required
+                    className={inputClasses("message")}
+                    onFocus={() => setFocused("message")}
+                    onBlur={() => setFocused(null)}
+                  />
+                </motion.div>
 
-                  <motion.button
-                    type="submit"
-                    className="bg-[var(--skin-color)] text-white py-3 px-6 rounded-lg hover:bg-opacity-90 transition-colors flex items-center gap-2 group"
-                  >
-                    <span>Send Message</span>
-                    <Send className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </motion.button>
-                </div>
+                <motion.button
+                  type="submit"
+                  className="bg-[var(--skin-color)] text-white py-3 px-6 rounded-lg
+                    hover:bg-opacity-90 transition-all duration-300
+                    flex items-center gap-2 group
+                    transform hover:scale-[1.02] active:scale-[0.98]"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  <span>Send Message</span>
+                  <Send className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </motion.button>
               </form>
             )}
           </motion.div>

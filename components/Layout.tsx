@@ -1,20 +1,20 @@
 "use client";
 
-import { useState } from "react";
-import Aside from "./sidebar-menu";
-import ToggleIcon from "./toggle-icon";
+// import { useState } from "react";
+// import Aside from "./sidebar-menu";
+// import ToggleIcon from "./toggle-icon";
 import StyleSwitcher from "./style-switcher";
 import { useTheme } from "@/contexts/theme";
 import ParticleField from "@/components/particle-field";
 import DisplayCard from "./display-card";
 
 function Layout({ children }: { children: React.ReactNode }) {
-  const [toggle, setToggle] = useState(false);
+  // const [toggle, setToggle] = useState(false);
   const { theme, skinColor } = useTheme();
 
-  const handleToggle = () => {
-    setToggle(!toggle);
-  };
+  // const handleToggle = () => {
+  //   setToggle(!toggle);
+  // };
 
   return (
     <main

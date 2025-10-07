@@ -1,4 +1,4 @@
-import { Project, Skill } from "@/types";
+import { Project, Skill, WorkExperience, Certification } from "@/types";
 
 export const PROJECTS: Project[] = [
   {
@@ -202,5 +202,50 @@ export const skills: Skill[] = [
   {
     label: "Solidity",
     icon: "https://img.icons8.com/color/48/000000/solidity.png",
+  },
+];
+
+export const certifications: Certification[] = [
+  {
+    id: 1,
+    title: "Fundamentals of Deep Learning",
+    issuer: "Nvidia Deep Learning Institute",
+    year: "2025",
+    icon: "/nvidia_icon.svg",
+  },
+  {
+    id: 2,
+    title: "Arit Developer Circle Hackathon",
+    issuer: "Arit Developer Circle",
+    year: "2025",
+    icon: "/adc_icon.png",
+  },
+  {
+    id: 3,
+    title: "Certificate of Appreciation",
+    issuer: "OpenSourceNest",
+    year: "2025",
+    icon: "/osn.webp",
+  },
+];
+
+export const workExperience: WorkExperience[] = [
+  {
+    id: 1,
+    role: "Frontend Developer",
+    link: "https://tetmart.ng",
+    company: "Tetmart Nigeria",
+    period: "Aug 2024 - Jan 2025",
+    description:
+      "Developed a specialized e-commerce platform for higher education institutions using React, featuring secure payments, user authentication, an intuitive product catalog with advanced filtering, real-time inventory management, and a responsive, high-performance shopping experience optimized for Nigerian students.",
+  },
+  {
+    id: 2,
+    role: "Backend Developer",
+    link: "https://husridge.com",
+    company: "Husridge",
+    period: "Aug 2025 - Present",
+    description:
+      "Built a full subscription billing platform (Node.js/Express, MongoDB) with Paystack integration, secure card tokenization, and HMAC‑verified webhooks for recurring invoices and trials.\n\nImplemented anti‑gaming “peak‑in‑cycle” seat billing for usage‑based fairness, with clear monthly invoice labeling and idempotent\nprocessing.\nDelivered production‑ready payment APIs (card setup, status, invoices, cancel), automated billing via cron, and pre‑charge reminder\nnotifications to improve collections.\nWrote comprehensive technical documentation and rollout plan; added robust error handling, observability, and secure payment\nflows.",
   },
 ];
