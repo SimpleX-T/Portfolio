@@ -61,6 +61,7 @@ export default function Contact() {
         });
       }, 5000);
     } catch (error) {
+      console.log(error);
       setFormStatus({
         submitted: true,
         success: false,
