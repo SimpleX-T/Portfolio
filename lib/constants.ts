@@ -1,5 +1,29 @@
 import { Project, Skill, WorkExperience, Certification } from "@/types";
+import { jsonDbBaseUrl } from "./utils";
 
+export async function fetchProjects(): Promise<Project[]> {
+  const res = await fetch(`${jsonDbBaseUrl()}/projects`, { cache: "no-store" });
+  if (!res.ok) throw new Error("Failed to fetch projects");
+  return res.json();
+}
+
+export async function fetchCertifications(): Promise<Certification[]> {
+  const res = await fetch(`${jsonDbBaseUrl()}/certifications`, {
+    cache: "no-store",
+  });
+  if (!res.ok) throw new Error("Failed to fetch certifications");
+  return res.json();
+}
+
+export async function fetchWorkExperience(): Promise<WorkExperience[]> {
+  const res = await fetch(`${jsonDbBaseUrl()}/workExperience`, {
+    cache: "no-store",
+  });
+  if (!res.ok) throw new Error("Failed to fetch work experience");
+  return res.json();
+}
+
+// Static fallback data for local dev, used by migration and as placeholder
 export const PROJECTS: Project[] = [
   {
     id: 8,
